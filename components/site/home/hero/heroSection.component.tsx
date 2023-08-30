@@ -1,10 +1,13 @@
+import SliderView from '@/components/common/slider/slider.view'
 import React from 'react'
 
 type Props = {}
 
 const HeroSectionCponent = (props: Props) => {
   return (
-    <div>heroSection.cCponent</div>
+    <div>
+      
+    </div>
   )
 }
 
