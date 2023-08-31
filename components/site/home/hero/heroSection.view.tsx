@@ -17,15 +17,16 @@ const HeroSectionView = (props: Props) => {
     <Container sx={heroSectionStyle}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={8}>
-          <Box>
+          <UICard sx={{borderRadius:1,padding:1}} >
             <UICarousel
               images={sliderImage}
               sliderHeight="320px"
               autoplay={true}
-              autoplaySpeed={5000}
+              autoplaySpeed={4000}
               infinite={true}
+              sx={{borderRadius:1, width:"100%", height:"100%"}}
             />
-          </Box>
+          </UICard>
         </Grid>
         <Grid item xs={12} md={4}>
           <Box>

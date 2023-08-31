@@ -1,3 +1,5 @@
+import { SxProps } from "@mui/material";
+
 export type TSliderSimpleProps = {
   alt?: string;
   arrows?: boolean;
@@ -16,6 +18,7 @@ export type TSliderSimpleProps = {
   speed?: number;
   width?: string;
   sliderHeight?:string;
-  autoplay?: boolean, 
-  autoplaySpeed?: number, 
+  autoplay?: boolean;
+  autoplaySpeed?: number;
+  sx?:SxProps;
 };

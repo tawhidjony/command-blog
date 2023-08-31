@@ -13,9 +13,9 @@ const BlogView = (props: Props) => {
       <Grid container spacing={3}>
         {Array(9)
           .fill(0)
-          .map(() => {
+          .map((index) => {
             return (
-              <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={3} >
                 <Box className="blog" >
                   <Box className="blog__thumbnail">
                     <Box component={'img'} src="https://images.unsplash.com/photo-1640552435388-a54879e72b28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
@@ -35,7 +35,6 @@ const BlogView = (props: Props) => {
                       <Box component={'p'} >10-05-2022</Box>
                     </Box>
                   </Box>
-                  
                 </Box>
               </Grid>
             );

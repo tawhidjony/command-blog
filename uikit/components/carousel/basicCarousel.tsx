@@ -12,16 +12,19 @@ import { Box } from "@mui/material";
 const SliderSimpleComponent: FC<TSliderSimpleProps> = (props) => {
   const { alt = "", dataTestId = "uikit__slider-simple", height, images, width, sliderHeight } = props;
   const settings = SLIDER_SIMPLE_SETTINGS(props).settings;
+  
   return (
-    <Slider {...settings} data-testid={dataTestId}>
+    <Slider {...settings} data-testid={dataTestId}  >
       {images && images.map((image, index) => {
           return (
             <Box sx={{height:sliderHeight}} key={index}>
-              <img
+              <Box
+                component={'img'}
                 alt={alt}
                 height={height}
                 src={image}
                 width={width}
+                sx={props.sx}
               />
             </Box>
           );

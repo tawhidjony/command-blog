@@ -4,9 +4,9 @@ import { UICardBodyProps, UICardFooterProps, UICardHeaderProps, UICardProps } fr
 import { UICardBodyStyle, UICardFooterStyle, UICardHeaderStyle, UICardStyle } from "./card.style";
 
 export const UICard = (props:UICardProps)=> {
-  const { children } = props;
+  const { children, sx } = props;
     const theme = useTheme()
-  return <Box sx={UICardStyle(theme)}><Box className={'card'}>{children}</Box></Box>;
+  return <Box sx={UICardStyle(theme)}><Box sx={sx} className={'card'}>{children}</Box></Box>;
 };
 
 const CardHeader:FC<UICardHeaderProps> = (props) => {

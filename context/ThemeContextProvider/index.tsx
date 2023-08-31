@@ -15,7 +15,8 @@ export const ThemeContext = createContext<ThemeContextType>({
 });
 
 export const ThemeContextProvider = ({ children }: IThemeContextProps) => {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem('theme') === "false"?true:false);
+  let themeValue = localStorage.getItem('theme') && localStorage.getItem('theme') === "false"?true:false
+  const [darkMode, setDarkMode] = useState(themeValue);
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
     localStorage.setItem('theme', darkMode.toString())
