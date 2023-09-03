@@ -10,11 +10,17 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import Link from "next/link";
 
 type Props = {};
 
 const SideBar = (props: Props) => {
   const theme = useTheme();
+  const sideNav = [
+    { id: 1, name: "Dashboard", icon: <InboxIcon />, url:"/admin/dashboard"},
+    { id: 1, name: "Category", icon: <InboxIcon />, url:"/admin/category" },
+    { id: 1, name: "Posts", icon: <InboxIcon />, url:"/admin/posts" },
+  ];
   return (
     <div>
       <Toolbar
@@ -29,13 +35,11 @@ const SideBar = (props: Props) => {
       </Toolbar>
 
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+        {sideNav.map((text, index) => (
+          <ListItem key={text.id} disablePadding>
+            <ListItemButton LinkComponent={Link} href={text.url} >
+              <ListItemIcon>{text.icon}</ListItemIcon>
+              <ListItemText primary={text.name} />
             </ListItemButton>
           </ListItem>
         ))}
