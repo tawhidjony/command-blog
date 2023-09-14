@@ -2,6 +2,7 @@
 import connectDB from "@/libs/monogodb";
 import User from "@/models/user";
 import NextAuth from "next-auth/next";
+import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
 
 interface IAPIUser {
@@ -18,6 +19,10 @@ const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    DiscordProvider({
+      clientId: process.env.Discord_CLIENT_ID,
+      clientSecret: process.env.Discord_CLIENT_SECRET,
     }),
   ],
   pages:{
