@@ -4,8 +4,9 @@ type Props = {}
 
 const SignIn = (props: Props) => {
   return (
-    <div>
-            <button
+    <div className="flex justify-center items-center h-screen bg-red-500">
+        
+           <button
           onClick={() => signIn("google")}
           className="bg-slate-900 text-white px-6 py-2 rounded-md"
         >
@@ -17,6 +18,7 @@ const SignIn = (props: Props) => {
         >
           Sign In with discord
         </button>
+        
     </div>
   )
 }
